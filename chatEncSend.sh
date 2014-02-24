@@ -1,16 +1,25 @@
 #!/bin/bash
 #[chatEncSend.sh]
 
-
-# Mensagem
-MSG="$1"
+# $1 =: HOST
+# $2 =: PORTA
+# $3 =: MENSAGEM
 
 # Info do host
-HOST='172.25.137.110'
+HOST=$1
 
 # Porta
-port=2526
+PORTA=$2
+
+# Mensagem
+MSG="$3"
 
 #echo $MSG
-bash myEnc.sh e "$MSG" > /dev/tcp/$HOST/$port
+bash myEnc.sh e "$MSG" > /dev/tcp/$HOST/$PORTA
+
+echo "ENVIANDO"
+bash myEnc.sh e "$MSG"
+echo "________________-"
+echo "$MSG"
+echo "ENVIADO"
 

@@ -1,25 +1,27 @@
 #!/bin/bash
 # [chatEnc.sh]
-# Author: 
-# Date: 
+
+# $1 =: HOST
+# $2 =: PORTA
 
 # Info do host
-HOST='127.0.0.1'
-OUT='chat_enc_read.out'
+HOST=$1
 
 # Porta
-port=2526
+PORTA=$2
+
+#Saída
+OUT='chat_enc_read.out'
 
 while [ true ]
 do
     rm -f $OUT
     touch $OUT
-    nc -l $port >$OUT;
+    nc -l $PORTA >$OUT;
     exec 2<&- #limpa stderr
     
     while read line           
-    do    
-        #echo $line       
+    do          
 	bash myEnc.sh d "$line";          
     done <$OUT
 
