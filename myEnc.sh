@@ -13,5 +13,6 @@ case $1 in
  *) echo "Você tem de entrar com um parâmetro válido"; rm -f $KEY_IN_FILE; exit; ;; 
 esac
 
-#rm -f $KEY_OUT_FILE;
-#rm -f $KEY_IN_FILE;
+rm -f $KEY_OUT_FILE;
+rm -f $KEY_IN_FILE;
+
